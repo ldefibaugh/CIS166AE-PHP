@@ -4,6 +4,13 @@
 
   <footer container class="siteFooter">
     <p>Design uses <a href="http://concisecss.com/">Concise CSS Framework</a></p>
+  <p class="float-right"><?php //Print currnt date/time
+	//Set timezone: (It's set in the php.ini file)
+	date_default_timezone_set("America/Phoenix");
+
+	//Now print the date and time:
+	print date('g:i a l F j');
+  ?></p>
   </footer>
     
 </body>
