@@ -1,26 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Connect to MySQL</title>
-</head>
-<body>
-<?php // Script 12.1 - mysqli_connect.php
-/* This script connects to the MySQL database. */
 
-// Attempt to connect to MySQL and print out messages:
-if ($dbc = mysqli_connect('localhost', 'root', 'RootFruclub*64', 'myblog')) {
-	
-	print '<p>Successfully connected to the database!</p>';
-	
-	mysqli_close($dbc); // Close the connection.
+<?php // Script 13.1 - mysqli_connect.php
+/* This script connects to the database
+and establishes the character set for communications. */
 
-} else {
+// Connect:
+$dbc = mysqli_connect('localhost', 'root', 'RootFruclub*64', 'myquotes');
 
-	print '<p style="color: red;">Could not connect to the database.</p>';
-
-}
-
-?>
-</body>
-</html>
+//Set the character set:
+mysqli_set_charset($dbc, 'utf8');
